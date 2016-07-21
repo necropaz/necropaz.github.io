@@ -103,8 +103,62 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-xs-12 ">
-						<p><b> &#9898; The balance in the GUI will always show 0 until June the 30th. </b></p>
-						<p><b> &#9898; Transfers are disabled until June the 30th. </b></p>
+						<p>The IOTA Weather Node is a Weather Station built with a
+						<a href"=https://www.raspberrypi.org/">Raspberry Pi</a>
+						and the add-on board
+						<a href="https://www.raspberrypi.org/products/sense-hat/">Sense HAT</a>
+						. The Weather Station send and receive data over the new
+						<a href="https://www.iotatoken.com/">IOTA Protocol</a></p>
+						<p>The IOTA Weather Node waiting until a client send a transaction with >0 IOTAs and a message.
+						With the message the client tell the node what is his request and an address on which the node can send his answer.
+						So can be send a command is arrived over the IOTA Protocol.
+						After this he read the Weather info from the Sense HAT and send them back or just show a promotion on his 8x8 LED Matrix.</p>
+						<p>The weather client can send request to the weather node.
+						He can request the weather or he can send a promotion to the  node. Both function costs 1i IOTA.</p>
+						For additional information and the source code go to   
+						<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>		
+						<a href="https://github.com/necropaz/weather_iota"
+						  <span  href="https://github.com/necropaz/weather_iota" class="fa-stack fa-lg">
+							  <i class="fa fa-circle fa-stack-2x"></i>
+							  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+						  </span> </a>
+						<h3>
+						What you need to run the Rapberry Pi Weather Station?
+						</h3>
+						<p>
+						<b>Required:</b>
+						<ul>
+							<li>Install the latest IOTA release from :
+							<a href="https://github.com/IOTAledger/iota-gui-beta/releases">IOTA Node</a></li>
+							<li>Install the latest iota python package
+							<a href="https://github.com/necropaz/iota">iota</a></li>
+							<li>the python package sys, json, urllib2 are also required
+						</ul>
+						<b> For more fun:</b>
+						<ul>
+							<li><a href="https://www.raspberrypi.org/">Raspberry Pi</a></li>
+							<li>microSD card with installed Linux as example: 
+							<a href="(https://ubuntu-mate.org/download/">Ubuntu MATE 16.04 LTS</a></li>
+							<li> Raspberry Pi
+							<a href="(https://www.raspberrypi.org/products/sense-hat/">Sense HAT</a></li>
+							<li> Sense HAT python
+							<a href="https://pypi.python.org/pypi/sense-hat)">package</a></li>
+						</ul></p>
+						<h3>
+						
+						</h3>
+						<h3>
+						The installation
+						</h3>
+						<p>
+						If you don't have a Sense HAT you can simulate the Sense HAT.
+						There are two members one is the node (the weather station) and
+						the other is the client how send a request to the node.
+						Both can be installed as a Python package which is very easy to run with a script or
+						you can use the GUI.
+						If you don't have a Sense HAT you also can simulate it with the GUI or the script.
+						Choose here what you wanna do:
+						</p
 					</div>
 				</div>
 			</div>
