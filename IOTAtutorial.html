@@ -81,19 +81,13 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading" style="color:black">
                         <h1 >IOTA Node Tutorial</h1>
-                        <h2 class="subheading"  >This is a tutorial to run a node on windows</h2>
-                        <span class="meta">Posted by <a href="#" style="color:black">Necropaz</a> on June 26, 2016</span>
+                        <h2 class="subheading"  >How to setup IOTA Wallet</h2>
+                        <span class="meta">Posted by <a href="#" style="color:black">Necropaz</a> on September 16, 2016</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
-    <div class="progress">
-      <div class="progress-bar" position="absolut" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-    <span class="sr-only">70% Complete</span>
-  </div>
-</div>
 
 <!-- Info -->
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -108,8 +102,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xs-12 ">
-                <p><b> &#9898; The balance in the GUI will always show 0 until June the 30th. </b></p>
-                <p><b> &#9898; Transfers are disabled until June the 30th. </b></p>
+                <p><b> &#9898; Seed:</b> 81-char string consisting only of uppercase latin letters and 9's which is used to access an account. A seed is like a private key/password. Keep it secure and don't share it with anyone. If someone has access to your seed they can access your account.</p>
+                <p><b> &#9898; Milestones:</b> Milestone is a special transaction issued by a special node called Coordinator. The Coordinator is run by Iota Foundation, its main purpose is to protect the network until it grows strong enough to sustain against a large scale attack from those who own GPUs. Milestones set general direction for the tangle growth and do some kind of checkpointing. Transactions (in)directly referenced by milestones are considered as confirmed.</p>
             </div>
         </div>
     </div>
@@ -120,7 +114,7 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
               <h2 class="post-title">
-                  Step 1 - Download
+                  Step - Download
               </h2>
         </div>
     </div>
@@ -128,14 +122,16 @@
     <article>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <a href="https://github.com/IOTAledger/iota-gui-beta/releases"
-                      <span  href="https://github.com/IOTAledger/iota-gui-beta/releases" class="fa-stack fa-lg">
+                <div class="col-lg-2 col-md-2 col-xs-2" >
+		<p></p>
+                  <p><a href="https://github.com/iotaledger/wallet/releases"
+                      <span  href="https://github.com/iotaledger/wallet/releases" class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                       </span> </a>
+		</p>
                 </div>
-                <div class="col-lg-6 col-md-6 col-xs-6 ">
+                <div class="col-lg-10 col-md-10 col-xs-10 ">
                     <p>Here you can download your IOTA client for your System. (click on the symbol on the left side) </p>
                     After you have downloade the right file install it on your system.
                 </div>
@@ -148,7 +144,7 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
               <h2 class="post-title">
-                  Step 2 - Login
+                  Syncing
               </h2>
         </div>
     </div>
@@ -156,24 +152,50 @@
     <article>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <img src="img/STEP1.png" width="100%" height="100%">
-                  </img>
-                </div>
-                <div class="col-lg-6 col-md-6 col-xs-6 ">
-                    <p> After you install your IOTA Wallet you can start it and login with your seed. </p>
-                    Your seed is your password and only letters and 9's are allowed.
+                <div class="col-lg-12 col-md-12 col-xs-12 ">
+                    <p> You can sycing on two ways:</p>
+		    <p> <b> &#9898;First option: </b>You can syncing from scratch. This needs a fast internet connection and is better for the network.</p>
+		    <p> <b> &#9898;Second option: </b>If your internet connection is too low you can download the DB from the Internet.</p>
+			<div class="container">
+				<a href="#STEP_SyncScratch" class="btn btn-success" role="button">Syncing from Scratch</a>
+				<a href="#STEP_SyncDB" class="btn btn-success" role="button">Syncing from extern DB</a>
                 </div>
             </div>
         </div>
     </article>
     <hr>
 
-    <!-- Step 3 -->
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+    <!-- Step 2 -->
+    <div id="STEP_SyncScratch" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
               <h2 class="post-title">
-                  Step 3 - Nodes
+                  Step - Syncing from Scratch
+              </h2>
+        </div>
+    </div>
+    <hr>
+    <article>
+        <div  class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-6 " >
+                  <img src="img/STEP_scratch.png" width="100%" height="100%">
+                  </img>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 ">
+                    <p> If you want to sync from Scratch let the node run for a while. You can see the procress in the left corner of the IOTA Wallet. You can compare your syncing state as you can see in this Step:</p>
+		<p> <a href="#STEP_Botbox" class="btn btn-success" role="button">Botbox</a></p>
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+
+   <!-- Step 3 -->
+    <div  id="STEP_SyncDB" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview">
+              <h2 class="post-title">
+                  Step - Syncing from extern DB
               </h2>
         </div>
     </div>
@@ -182,13 +204,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <img src="img/STEP2.png" width="100%" height="100%">
+                  <img src="img/STEP_SyncDB.png" width="100%" height="100%">
                   </img>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-6 ">
-                    <p> For claiming IOTAs it is recommendet to have 6 "Slave Nodes" and 3 additional Nodes. You can ask for "SlaveNodes IP List" and the additional Node IPs here: </p>
-                    <p><a href="http://chat.iotatoken.com/channel/iotatesting">Chat</a> or <a href="http://forum.iotatoken.com/t/meet-your-neighbours-exchange-ip-domain-of-your-nodes-here/60">Forum</a></p>
-                    After you collect enough Nodes IP you can go to Tools and then click on Edit Server Nodes.
+                    <p> If you want to sync from extern DB download this .zip File: <a href="https://www.dropbox.com/s/6g7j3hs92zjbife/IRI.zip?dl=0">Extern DB</a></li> </p>
+                    <p> Then switch to your Wallet and go to Tools->Open Database Folder. Close the IOTA Wallet and let the explorer which is shown your Database Folder open. </p>
+		    <p>Now unpack the downloaded .zip file and copy all files to the Database Folder. (Override the old Files in the Server Folder !!!)</p>
+		    <p>Now you can restart your IOTA Wallet and you should synced in under 15 mins to the latest Milestone (See Step 5).</p>
                 </div>
             </div>
         </div>
@@ -196,10 +219,10 @@
     <hr>
 
     <!-- Step 4-->
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div id="STEP_Botbox" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
               <h2 class="post-title">
-                  Step 4 - Save Nodes
+                  Step - Botbox
               </h2>
         </div>
     </div>
@@ -208,13 +231,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <img src="img/STEP3.png" width="100%" height="100%">
+                  <img src="img/STEP_Botbox.png" width="100%" height="100%">
                   </img>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-6 ">
-                    <p>Now here you can enter the Nodes IP you recived in the following style:</p>
-                    <p>+udp://IPADRESS:14265</p>
-                    After you have entered all your Nodes IP you can click on save and the IOTA client will restart automatically.
+                    <p>To check your syncing you should sing up in  <a href="http://slack.iotatoken.com/">IOTA Slack Chat</a> . There is a channel called <b>#botbox</b>. In this channel the coordinator post his newest Milestone.</p>
+                    <p>If your IOTA Wallet have the same Milestone (down in the left corner in the brackets). You are able to send and recive IOTAs. It is normal not to have the same amount of Transaction as the coordinator.</p>
                 </div>
             </div>
         </div>
@@ -225,7 +247,7 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
               <h2 class="post-title">
-                  Step 5 - Claim
+                  Step - Login
               </h2>
         </div>
     </div>
@@ -234,12 +256,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <img src="img/STEP4.png" width="100%" height="100%">
+                  <img src="img/STEP_Login.png" width="100%" height="100%">
                   </img>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-6 ">
-                    <p>After Step 4 the IOTA client will restart automatically and you have to reenter your Seed an login. (See Step 2).</p>
-                    Now you can click on Claim (as you can see in the picture).
+                    <p> To login you only have to enter your seed an press Login. </p>
+                    The seed is a 81-char string consisting only of uppercase latin letters and 9's which is used to access an account. A seed is like a private key/password. Keep it secure and don't share it with anyone. If someone has access to your seed they can access your account.
                 </div>
             </div>
         </div>
@@ -250,7 +272,7 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
               <h2 class="post-title">
-                  Step 6 - Donate
+                  Step - Generate address
               </h2>
         </div>
     </div>
@@ -259,13 +281,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <img src="img/STEP5.png" width="100%" height="100%">
+                  <img src="img/STEP_address.png" width="100%" height="100%">
                   </img>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-6 ">
-                    <p>Here you can enter the precent of your IOTAs which you will spend to the foundation.</p>
-                    <p>If you will not donate everything or later then tip 0 and click on CLAIM IOTA.</p>
-                    Now you have to wait a long time. (Claiming need about one hour per 1 Ti)
+                    <p>To generate an new address you should click on <b>RECIVE</b> Tab in the IOTA wallet.</p>
+                    Then press ATTACH TO TANGLE. When you use your Wallet for the first time its normal that getting tips needs a long time. After you succesfully add the address to the tangle you can see it in the <b>HISTORY</b> Tab under Addresses.<p> See  <a href="#STEP_History" class="btn btn-success" role="button">Step - History Tab </a></p>
                 </div>
             </div>
         </div>
@@ -276,7 +297,7 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
               <h2 class="post-title">
-                  Step 7 - Check Claiming
+                  Step 7 - Send IOTAs
               </h2>
         </div>
     </div>
@@ -285,14 +306,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <img src="img/STEP6.png" width="100%" height="100%">
+                  <img src="img/STEP_send.png" width="100%" height="100%">
                   </img>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-6 ">
-                    <p>On the Tap History you can check your if your claiming was succescfull.</p>
-                    <p>Remeber it tooks much time to claim. </p>
-                    <p><b>Your IOTAs will not showed in balance until June the 30th! The claiming will also be on 0% conformation.</b></p>
-                    <p>If you can see the amount in History Tab you can relax.</p>
+                    <p>To send IOTAs click on the <b>SEND</b> Tab. There you can enter an address and the amount and then click on send.</p>
+                    <p>As explained in Step - Generate Address it needs a long time for first sending. After you successfully send check <b>HISTORY</b> tab and <b>don't send new amount until your transaction is 100% confirmed.</b></p>
+                    For explaining how to check this see <a href="#STEP_History" class="btn btn-success" role="button">Step - History Tab </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+
+    <!-- Step 8 -->
+    <div id="STEP_History" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview">
+              <h2 class="post-title">
+                  Step - History Tab
+              </h2>
+        </div>
+    </div>
+    <hr>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-6 " >
+                  <img src="img/STEP_History.png" width="100%" height="100%">
+                  </img>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 ">
+                    <p>On the Tap History you can check your Transfers and Addresses which you have done.</p>
+                    <p>If a Transaction is not 100% confirmed after an hour you should replay it by clicking on Show bundle and then press Replay Transaction. See market as red. </p>
+                    <p><b>If you send an new Transaction before an old transaction became 100% confirmed you make double spends.</b></p>
+                    <p>If you click on Addresses you can see all addresses which you had attached to the tangle. The addresses don't need 100% confirmation.</p>
                 </div>
             </div>
         </div>
@@ -303,7 +350,7 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-preview">
               <h2 class="post-title">
-                  Step 8 -Server Log
+                  Step - Spam the Network
               </h2>
         </div>
     </div>
@@ -312,36 +359,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <img src="img/STEP7.png" width="100%" height="100%">
+                  <img src="img/STEP_Spammer.png" width="100%" height="100%">
                   </img>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-6 ">
-                    <p>To check your syncing you have to click on Tool and then on Server Log</p>
-                </div>
-            </div>
-        </div>
-    </article>
-    <hr>
-
-    <!-- Step 9 -->
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-              <h2 class="post-title">
-                  Step 9 - Check syncing
-              </h2>
-        </div>
-    </div>
-    <hr>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-6 " >
-                  <img src="img/STEP8.png" width="100%" height="100%">
-                  </img>
-                </div>
-                <div class="col-lg-6 col-md-6 col-xs-6 ">
-                    <p>Now Here you can see sometimes: Transacions to request = X / YYYY ( Z ms)</p>
-                    <p>YYYY shows you how many transaction you have seen and X are the amount of transaction to request.</p>
+                    <p>You can help the network by spamming it. With the wallet this is a very easy Step.</p>
+                    <p>Click on Tools->Network Spammer and then on <b>SPAM THE NETWORK</b>.</p>
                 </div>
             </div>
         </div>
